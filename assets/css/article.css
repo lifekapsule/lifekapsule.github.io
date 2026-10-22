@@ -1,0 +1,133 @@
+﻿/* ============================================================
+   Longread — paper theme
+   ============================================================ */
+:root{
+  --paper:#F6F3EC;
+  --paper-2:#FBF9F4;
+  --ink:#171A1F;
+  --ink-2:#3B434D;
+  --muted:#7A828E;
+  --line:#E2DCCF;
+  --accent:#12657F;
+  --accent-2:#0E4E63;
+  --font-serif:"Literata",Georgia,"Times New Roman",serif;
+  --font-sans:"Manrope","Segoe UI",system-ui,sans-serif;
+  --font-ui:"Inter","Segoe UI",system-ui,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-serif);
+  font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+p{margin:0 0 22px}
+h1,h2,h3{margin:0;font-family:var(--font-sans);font-weight:500;line-height:1.15;letter-spacing:-.02em}
+
+.a-shell{max-width:1140px;margin:0 auto;padding:0 28px}
+
+/* progress */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;background:rgba(18,101,127,.10);z-index:100}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#12657F,#4FA8C8);
+  transition:width .1s linear}
+
+/* header */
+.a-header{position:sticky;top:0;z-index:90;background:rgba(246,243,236,.86);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.a-head-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.a-brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink);
+  font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.a-brand svg{width:24px;height:24px;color:var(--accent)}
+.a-brand em{font-style:normal;color:var(--muted);font-size:11px;letter-spacing:.18em;margin-left:4px}
+.a-nav{display:flex;align-items:center;gap:22px;font-family:var(--font-ui);font-size:13px}
+.a-nav a{color:var(--ink-2)}
+.a-nav a:hover{color:var(--accent);text-decoration:none}
+.lang-link{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:11.5px;
+  letter-spacing:.08em}
+
+/* article head */
+.art-head{padding:64px 0 40px;max-width:860px}
+.art-kicker{font-family:var(--font-ui);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px}
+.art-head h1{font-size:clamp(30px,3.7vw,46px);line-height:1.12;margin-bottom:26px;letter-spacing:-.025em}
+.art-lead{font-size:21px;line-height:1.62;color:var(--ink-2);border-left:3px solid var(--accent);
+  padding-left:22px;margin-bottom:30px;font-weight:300}
+.art-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--font-ui);
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.art-meta .dot{opacity:.5}
+
+/* two-column body */
+.art-body{display:grid;grid-template-columns:minmax(0,720px) 260px;gap:72px;
+  justify-content:space-between;padding-bottom:40px}
+.art-content{min-width:0}
+
+/* toc */
+.art-toc{position:sticky;top:96px;align-self:start;padding-top:6px;
+  border-left:1px solid var(--line);padding-left:0}
+.toc-title{font-family:var(--font-ui);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;padding-left:16px}
+.art-toc a{display:flex;gap:10px;font-family:var(--font-ui);font-size:13px;line-height:1.35;
+  color:var(--muted);padding:7px 0 7px 16px;border-left:2px solid transparent;margin-left:-1px;
+  transition:color .15s,border-color .15s}
+.art-toc a span{font-size:10.5px;letter-spacing:.08em;padding-top:2px;opacity:.65}
+.art-toc a:hover{color:var(--ink);text-decoration:none}
+.art-toc a.on{color:var(--ink);border-left-color:var(--accent)}
+
+/* content typography */
+.art-sec{scroll-margin-top:88px}
+.art-sec h2{
+  display:flex;align-items:baseline;gap:16px;
+  font-size:clamp(19px,2vw,23px);letter-spacing:.02em;text-transform:uppercase;
+  border-top:1px solid var(--line);padding-top:26px;margin:64px 0 24px;
+}
+.art-sec:first-child h2{margin-top:0}
+.h2-n{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:400;
+  border:1px solid rgba(18,101,127,.3);border-radius:999px;padding:3px 8px;flex:none;transform:translateY(-2px)}
+.art-sec h3{font-size:18px;margin:34px 0 12px;color:var(--ink)}
+.art-content p{color:#22262C;font-size:19.5px;line-height:1.75;hyphens:auto}
+.art-content > .art-sec:first-of-type > p:first-of-type::first-letter{
+  float:left;font-family:var(--font-sans);font-size:62px;line-height:.82;padding:6px 12px 0 0;color:var(--accent)
+}
+
+/* lists */
+.list{list-style:none;margin:0 0 26px;padding:0}
+.list li{position:relative;padding-left:28px;margin-bottom:12px;font-size:19px;line-height:1.65;color:#22262C}
+.list li::before{content:"";position:absolute;left:6px;top:12px;width:7px;height:7px;
+  background:var(--accent);transform:rotate(45deg);opacity:.85}
+.art-sec:last-of-type .list li{font-size:15.5px;line-height:1.55;margin-bottom:10px;word-break:break-word}
+.art-sec:last-of-type .list li a{font-size:13.5px;color:var(--muted)}
+.art-sec:last-of-type .list li::before{top:9px;width:5px;height:5px}
+
+/* letter */
+.letter{margin:44px 0;padding:38px 40px;background:var(--paper-2);border:1px solid var(--line);
+  border-left:3px solid var(--accent);border-radius:2px}
+.letter p{font-size:21px;line-height:1.65;font-style:italic;color:#1D2228;margin-bottom:14px}
+.letter p:last-child{margin-bottom:0}
+
+/* footer */
+.art-footer{border-top:1px solid var(--line);margin-top:40px;padding:44px 0 90px}
+.art-sign{font-family:var(--font-sans);font-size:15px;letter-spacing:.02em;margin-bottom:8px}
+.art-foot-note{color:var(--muted);font-size:15px;font-style:italic;margin-bottom:24px}
+.art-back{font-family:var(--font-ui);font-size:13px;color:var(--ink-2)}
+.art-back:hover{color:var(--accent);text-decoration:none}
+
+/* responsive */
+@media (max-width:1080px){
+  .art-body{grid-template-columns:1fr;gap:0}
+  .art-toc{display:none}
+}
+@media (max-width:640px){
+  .a-shell{padding:0 20px}
+  .art-head{padding:40px 0 28px}
+  .art-lead{font-size:18.5px;padding-left:16px}
+  .art-content p,.list li{font-size:18px}
+  .letter{padding:26px 22px}
+  .letter p{font-size:18.5px}
+  .art-sec h2{margin-top:46px;font-size:18px}
+}
+@media print{
+  .progress,.a-header,.art-toc,.art-back{display:none}
+  body{background:#fff}
+}
+
